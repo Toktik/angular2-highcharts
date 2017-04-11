@@ -30,13 +30,6 @@ var ChartModule = ChartModule_1 = (function () {
     function ChartModule() {
     }
     ChartModule.forRoot = function () {
-        var highchartsModules = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            highchartsModules[_i] = arguments[_i];
-        }
-        highchartsModules.forEach(function (module) {
-            module(highchartsStatic);
-        });
         return {
             ngModule: ChartModule_1,
             providers: [

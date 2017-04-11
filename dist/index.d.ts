@@ -5,6 +5,6 @@ import { ChartPointComponent } from './ChartPointComponent';
 import { ChartXAxisComponent } from './ChartXAxisComponent';
 import { ChartYAxisComponent } from './ChartYAxisComponent';
 export declare class ChartModule {
-    static forRoot(...highchartsModules: Array<Function>): ModuleWithProviders;
+    static forRoot(): ModuleWithProviders;
 }
 export { ChartComponent, ChartSeriesComponent, ChartPointComponent, ChartXAxisComponent, ChartYAxisComponent };

@@ -22,12 +22,7 @@ const highchartsStatic:HighchartsStatic = require('highcharts');
     exports: [CHART_DIRECTIVES]
 })
 export class ChartModule {
-    static forRoot(...highchartsModules: Array<Function>): ModuleWithProviders {
-        // Plug highcharts modules
-        highchartsModules.forEach((module) => {
-            module(highchartsStatic)
-        });
-
+    static forRoot(): ModuleWithProviders {
         return {
             ngModule: ChartModule,
             providers: [
