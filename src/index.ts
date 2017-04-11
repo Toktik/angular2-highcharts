@@ -20,9 +20,10 @@ const CHART_DIRECTIVES: any[] = [
     exports: [CHART_DIRECTIVES]
 })
 export class ChartModule {
-    static forRoot(highchartsStatic: HighchartsStatic, ...highchartsModules: Array<Function>): ModuleWithProviders {
+    static forRoot(highchartsStatic: HighchartsStatic, ...highchartsModules: string[]): ModuleWithProviders {
         // Plug highcharts modules
-        highchartsModules.forEach((module) => {
+        highchartsModules.forEach((moduleName) => {
+            let module = require(moduleName)
             module(highchartsStatic)
         });
 

@@ -6,6 +6,6 @@ import { ChartXAxisComponent } from './ChartXAxisComponent';
 import { ChartYAxisComponent } from './ChartYAxisComponent';
 import { HighchartsStatic } from './HighchartsService';
 export declare class ChartModule {
-    static forRoot(highchartsStatic: HighchartsStatic, ...highchartsModules: Array<Function>): ModuleWithProviders;
+    static forRoot(highchartsStatic: HighchartsStatic, ...highchartsModules: string[]): ModuleWithProviders;
 }
 export { ChartComponent, ChartSeriesComponent, ChartPointComponent, ChartXAxisComponent, ChartYAxisComponent };
