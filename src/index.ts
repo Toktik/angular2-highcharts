@@ -20,19 +20,22 @@ const CHART_DIRECTIVES: any[] = [
     exports: [CHART_DIRECTIVES]
 })
 export class ChartModule {
-    static forRoot(highchartsStatic: HighchartsStatic, ...highchartsModules: string[]): ModuleWithProviders {
-        // Plug highcharts modules
-        highchartsModules.forEach((moduleName) => {
-            let module = require(moduleName)
-            module(highchartsStatic)
-        });
-
+    static forRoot(highchartsStatic: HighchartsStatic): ModuleWithProviders {
         return {
             ngModule: ChartModule,
             providers: [
                 { provide: HighchartsStatic, useValue: highchartsStatic }
             ]
         }
+    }
+
+    constructor(highchartsStatic: HighchartsStatic) {
+        let highchartsModules = ['highcharts'];
+        // Plug highcharts modules
+        highchartsModules.forEach((moduleName) => {
+            let module = require(moduleName)
+            module(highchartsStatic)
+        });
     }
 }
 
